@@ -13,7 +13,7 @@
 <body>
 
     <h1>Contacts</h1>
-    <table id="contactsTable">
+    <table id="contacts">
         <thead>
             <tr>
                 <th>Slot #</th>
@@ -21,7 +21,6 @@
             </tr>
         </thead>
         <tbody>
-          <!-- JavaScript will populate this part -->
         </tbody>
     </table>
      
@@ -32,22 +31,22 @@
     <button id="clearButton">Clear</button>
 
     <script>
-        // Prompt the user to see the entire list with a charming invitation
+// for user to see contact list 
             alert('Click OK to view or browse the entire contact list!');
       
-        // Define the slot numbers and contacts list (stored in an array)
+// array for contacts
         const slots = [0, 1, 2, 3, 4, 5];
         const contacts = ["Arnold", "Sly", "Dwayne", "Vin", "JCVD", "Steven"];
 
-        // Populate the table with contacts
-        const tableBody = document.querySelector('#contactsTable tbody');
+// table and cotacts combined
+        const tableBody = document.querySelector('#contacts tbody');
         for (let i = 0; i < slots.length; i++) {
             const row = document.createElement('tr');
             row.innerHTML = `<td>${slots[i]}</td><td>${contacts[i]}</td>`;
             tableBody.appendChild(row);
         }
 
-        // Prompt the user to enter a slot number for the name they wish to see
+// asking user to type a number
         document.getElementById('searchButton').onclick = function() {
             const slotInput = document.getElementById('slotInput').value;
             const messageElement = document.getElementById('message');
@@ -60,7 +59,7 @@
         };
 
       
-        // Clear the input field and message
+// clear input
         document.getElementById('clearButton').onclick = function() {
             document.getElementById('slotInput').value = '';
             document.getElementById('message').textContent = '';
